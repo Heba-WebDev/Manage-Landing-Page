@@ -1,0 +1,153 @@
+
+/*Be Vietnam Pro 400/500/700 -> Google fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
+/*Custom Properties*/
+
+
+:root {
+    /* Colors */
+    --bright-red: hsl(12, 88%, 59%);
+    --pale-red: hsl(13, 100%, 96%);
+    --dark-blue: hsl(228, 39%, 23%);
+    --very-dark-blue: hsl(233, 12%, 13%);
+    --dark-grayish-blue: hsl(227, 12%, 61%);
+    --light-gray: hsl(0, 0%, 98%);
+
+    /* Font-sizes */
+    --fs-200: 0.875rem;
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.75rem;
+    --fs-700: 3.5rem;
+
+    /* Fonts */
+
+    --sans-serif: "Be Vietnam Pro", Arial, sans-serif;
+}
+
+/*Restes*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*
+{
+   margin: 0;
+   padding: 0;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, svg, canvas {
+    display: block;
+    max-width: 100%;
+}
+
+button, input, textarea, select {
+    font: inherit;
+}
+
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+
+/*Utility Classes*/
+
+.flex {
+    display: flex;
+
+}
+
+.grid {
+    display: grid;
+}
+
+.container {
+    padding-inline: 2rem;
+    margin-inline: auto;
+    max-width: 90em; /*1440px*/
+}
+
+
+/*Colors*/
+
+.bg-light-gray {
+    background-color: var( --light-gray);
+}
+
+.bg-bright-red {
+    background-color: var(--bright-red);
+}
+
+.bg-very-dark-blue {
+    background-color: var(--very-dark-blue);
+}
+
+.bg-pale-red {
+    background-color: var(--pale-red);
+}
+
+.text-light-gray {
+    color: var( --light-gray);
+}
+
+.text-dark-blue {
+    color: var(--dark-blue);
+}
+
+.text-grayish-blue {
+    color: var(--dark-grayish-blue);
+}
+
+.sans-serif {
+    font-family: var(--sans-serif);
+}
+
+.fs-200 {
+    font-size: var(--fs-200);
+}
+
+.fs-300 {
+    font-size: var(--fs-300);
+}
+
+.fs-400 {
+    font-size: var(--fs-400);
+}
+
+.fs-500 {
+    font-size: var(--fs-500);
+}
+
+.fs-700 {
+    font-size: var(--fs-700);
+}
+
+/*Styles*/
+
+.btn {
+    background-color: var(--bright-red);
+    border: none;
+    padding: 0.3rem 1.6rem;
+    border-radius: 1rem;
+    color: var(--light-gray);
+}
+
+
+.btn--white {
+    background-color: var(--light-gray);
+    color: var(--bright-red);
+}
