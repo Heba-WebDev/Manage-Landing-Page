@@ -16,16 +16,30 @@
     --light-gray: hsl(0, 0%, 98%);
 
     /* Font-sizes */
-    --fs-200: 0.875rem;
-    --fs-300: 1rem;
-    --fs-400: 1.125rem;
-    --fs-500: 1.75rem;
-    --fs-700: 3.5rem;
+
+    --fs-700: 2rem;
+    --fs-500: 1.5rem;
+    --fs-400: 1rem;
+    --fs-300: 0.875rem;
+    --fs-200: 0.7rem;
 
     /* Fonts */
 
     --sans-serif: "Be Vietnam Pro", Arial, sans-serif;
 }
+
+
+@media (min-width: 45em) {
+    :root {
+        /* font-sizes */
+     --fs-200: 0.875rem;
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.75rem;
+    --fs-700: 3.5rem;
+    }
+}
+
 
 /*Restes*/
 
@@ -73,13 +87,41 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .grid {
     display: grid;
+    gap: 0.6rem;
 }
 
 .container {
-    padding-inline: 2rem;
+    padding-inline: 1.2rem;
     margin-inline: auto;
     max-width: 90em; /*1440px*/
 }
+
+@media (min-width: 45rem) {
+    .container {
+        padding-inline: 2rem;
+    }
+}
+
+.desktop {
+    display: none;
+}
+
+.mobile {
+    display: block;
+}
+
+@media (min-width: 45rem) {
+    .desktop {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
+}
+
+.text-center {
+    text-align: center;
+    }
 
 
 /*Colors*/
@@ -138,12 +180,118 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /*Styles*/
 
+
+header {
+    padding-top: 2.1em;
+}
+
+.navbar--mobile {
+    justify-content: space-between;
+}
+
+.hero {
+    flex-direction: column-reverse;
+    padding-top: 2em;
+}
+
+@media (min-width: 45rem) {
+    .hero {
+        flex-direction: column;
+    }
+}
+
+
+
+.hero__text > p {
+    padding: 0.8em 2em;
+    margin-bottom: 0.3rem;
+}
+
+.benefits {
+    padding: 0;
+    margin: 0;
+}
+
+.benefits__intro {
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+    gap: 1rem;
+    
+}
+.benefits__list__element {
+    flex-direction: column;
+   
+}
+.benefits__list__element__header {
+   padding: 0;
+  margin-left: 1.5rem;
+ align-items: center;
+
+}
+
+.benefits__list__element__header  > span {
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    font-weight: 400;
+    margin-left: -0.2rem;
+}
+
+.benefits__list__element__p {
+    padding: 1rem 1.2rem;
+    text-align: left;
+}
+
+.benefits__list__element__title {
+    padding-left: 3%;
+}
+
+@media (max-width: 320px) {
+    .benefits__list__element__title {
+     font-size: 0.8rem;
+    }
+
+    .benefits__list__element__header  > span {
+        padding: 0.3rem 1.1rem;
+        border-radius: 1.2rem;
+    }
+}
+
+.testimonials {
+   padding-top: 2rem;
+   padding-bottom: 2rem;
+}
+
+.testimonials__title > h2 {
+    margin-bottom: 15%;
+    padding: 1rem 0;
+    font-weight: 700;
+}
+
+.testimonials__cards {
+    padding-bottom: 3rem;
+}
+
+.testimonials__card {
+ background-color: var(--light-gray);
+ justify-content: center;
+ text-align: center;
+ padding: 1rem;
+}
+
+.testimonials__card__img {
+    justify-self: center;
+    margin-top: -15%;
+    max-width: 30%;
+}
+
 .btn {
     background-color: var(--bright-red);
     border: none;
-    padding: 0.3rem 1.6rem;
-    border-radius: 1rem;
+    padding: 0.4rem 2rem;
+    border-radius: 1.2rem;
     color: var(--light-gray);
+    justify-self: center;
+    font-weight: 500;
 }
 
 
@@ -151,3 +299,4 @@ p, h1, h2, h3, h4, h5, h6 {
     background-color: var(--light-gray);
     color: var(--bright-red);
 }
+
