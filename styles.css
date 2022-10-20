@@ -233,7 +233,7 @@ header {
     padding: 0.3rem 1rem;
     border-radius: 1rem;
     font-weight: 400;
-    margin-left: -0.2rem;
+    margin-left: -0.9rem;
 }
 
 .benefits__list__element__p {
@@ -298,5 +298,117 @@ header {
 .btn--white {
     background-color: var(--light-gray);
     color: var(--bright-red);
+    padding: 0.8rem 1.6rem;
+    font-weight: 600;
+    border-radius: 1.8rem;
+    font-size: var(--fs-400);
 }
 
+.btn--footer {
+    padding: 0.4rem 1.5rem;
+    font-size: var(--fs-400);
+    font-weight: 400;
+    border-radius: 1.8rem;
+}
+
+.testimonials__slider__btns {
+    padding: 1rem 0;
+ justify-content: center;
+ gap: 0.5rem;
+}
+
+.testimonials__slider__btn {
+    background: white;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 2px double var(--bright-red);
+}
+
+.selected {
+    background: var(--bright-red);
+}
+
+.promotion {
+    padding: 4rem 2rem;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+.promotion > h2 {
+    color: white;
+    padding-inline: 1.5rem;
+    font-size: var(--fs-700);
+}
+
+.footer {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer__email {
+    padding: 2rem 0;
+}
+
+form {
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+
+
+
+
+input[type=email] {
+    resize: none;
+    border: 0;
+    padding: 0 0.5rem;
+    border-radius: 1.8rem;
+    font-size: var(--fs-200);
+    align-items: center;
+    outline: none;
+} 
+
+.footer__nav {
+    justify-content: space-around;
+    text-align: left;
+    font-size: var(--fs-300);
+    padding-inline: 0.8rem;
+}
+
+.footer__nav__list {
+    list-style: none;
+    padding: 1rem 0.5rem;
+}
+
+.footer__nav__list > li {
+    padding: 0.5rem 0;
+}
+
+
+.socials {
+    flex-direction: column-reverse;
+}
+
+.socials > img {
+    justify-self: center;
+    padding-inline: 4rem;
+    
+    
+}
+.socials__icons {
+    margin: 0 auto;
+    gap: 1.5rem;
+    padding: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+.socials__icons > img {
+width: 2em;
+}
+
+.footer__copyright {
+    padding: 2rem 0;
+}

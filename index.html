@@ -112,41 +112,54 @@
         <blockquote>“Their software allows us to track, manage and collaborate on our projects 
           from anywhere. It keeps the whole team in-sync without being intrusive.”</blockquote>
         </figure> -->
+
+        <div class="testimonials__slider__btns flex">
+            <div class="testimonials__slider__btn selected"></div>
+            <div class="testimonials__slider__btn"></div>
+            <div class="testimonials__slider__btn"></div>
+            <div class="testimonials__slider__btn"></div>
+        </div>
       </div>
+
+      
 
     <button class="btn">Get Started</button>  
 
   </section>
 
 
-  <section class="bg-bright-red">
-    <h2>Simplify how your team works today.</h2>
+  <section class="bg-bright-red promotion grid">
+    <h2 class="text-center">Simplify how your team works today.</h2>
     <button class="btn btn--white">Get Started</button>
   </section>
 </main>
   
 
-<footer class="bg-very-dark-blue text-light-gray">
- <section class="container">
+<footer class="bg-very-dark-blue text-light-gray footer flex">
+
+  <small class="mobile text-grayish-blue footer__copyright">Copyright 2020. All Rights Reserved</small>
+ <section class="socials flex">
   <img src="/images/logo.svg">
-  <div>
+  <div class="flex socials__icons">
     <img src="/images/icon-facebook.svg" alt="facebook">
     <img src="/images/icon-youtube.svg" alt="youtube">
     <img src="/images/icon-twitter.svg" alt="twitter">
     <img src="/images/icon-pinterest.svg" alt="pinterest">
     <img src="/images/icon-instagram.svg" alt="instagram">
   </div>
+
+  
  </section> 
 
-<section class="container">
-<ul>
+<section class="footer__nav flex">
+<ul class="footer__nav__list">
 <li>Home</li>
 <li>Pricing</li>
 <li>Products</li>
 <li>About Us</li>
 </ul>
 
-<ul>
+<ul class="footer__nav__list">
   <li>Careers</li>
   <li>Community</li>
   <li>Privacy Policy</li>
@@ -154,12 +167,13 @@
 </section> 
 
  
-<section class="container">
-  <form>
- <textarea>Updates in your inbox…</textarea> 
- <input type="submit" value="Go" class="bg-bright-red"> 
+<section class="footer__email">
+  <form class="flex">
+  <label for="email"></label>
+  <input type="email" name="email" placeholder="Updates in your box ...">
+  <input type="submit" value="Go" class="bg-bright-red btn btn--footer"> 
   </form>
-  <small>Copyright 2020. All Rights Reserved</small>
+  <small class="desktop">Copyright 2020. All Rights Reserved</small>
 </section>  
   
 </footer>
