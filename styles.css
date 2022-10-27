@@ -448,7 +448,7 @@ header > img {
 
 
 .testimonials__slider__btns {
-    padding: 1rem 0;
+ padding: 1rem 0;
  justify-content: center;
  gap: 0.5rem;
 }
@@ -461,10 +461,28 @@ header > img {
     border: 2px double var(--bright-red);
 }
 
+.testimonials__slider__btn:hover {
+    cursor: pointer;
+}
+
 .selected {
     background: var(--bright-red);
 }
+#testimonails--1 {
+    display: grid;
+}
 
+#testimonails--2 {
+    display: none;
+}
+
+#testimonails--3 {
+    display: none;
+}
+
+#testimonails--4 {
+    display: none;
+}
 
 
 .promotion__inner {
