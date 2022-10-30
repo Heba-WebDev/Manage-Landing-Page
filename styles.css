@@ -9,6 +9,7 @@
 :root {
     /* Colors */
     --bright-red: hsl(12, 88%, 59%);
+    --bright-orange: hsl(12, 90%, 68%);
     --pale-red: hsl(13, 100%, 96%);
     --dark-blue: hsl(228, 39%, 23%);
     --very-dark-blue: hsl(233, 12%, 13%);
@@ -147,6 +148,10 @@ p, h1, h2, h3, h4, h5, h6 {
     font-size: 0.8rem;
 }
 
+.btn:hover {
+ background-color: var(--bright-orange);
+ cursor: pointer;
+}
 
 .btn--white {
     background-color: var(--light-gray);
@@ -156,6 +161,12 @@ p, h1, h2, h3, h4, h5, h6 {
     border-radius: 2rem;
     font-size: var(--fs-400);
 }
+.btn--white:hover {
+    background-color: white;
+    cursor: pointer;
+    color: var(--bright-orange);
+   }
+
 
 /*Colors*/
 
@@ -234,7 +245,66 @@ header > img {
 } 
 
 .navbar {
+    position: relative;
     justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(1fr, 1fr);
+}
+
+@media (min-width: 50rem) { 
+
+    .navbar {
+        display: flex;
+    }
+}
+
+
+.navbar__logo, .navbar__mobile__icon {
+    grid-row: 1/2;
+}
+
+.navbar__menu {
+    background-color: white;
+    display: block;
+    border: red 1px solid;
+    padding: 1rem;
+    max-width: 100%;
+     border-radius: 0.3rem;
+    }
+    
+    .navbar__menu > li {
+        display: flex;
+        flex-direction: column;
+       
+    }
+
+@media (min-width: 50rem) {
+
+    .navbar__menu {
+        position: inherit;
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        gap: 1.4rem;
+        align-items: center;
+        border: 0;
+    }
+    .navbar__menu > li {
+        list-style: none;
+        display: inline-block;
+        font-size: var(--fs-200);
+        color: var(--dark-blue);
+    }
+
+    .navbar__menu > li:hover {
+        color: var(--dark-grayish-blue);
+        cursor: pointer;
+    }
+}
+
+.navbar__mobile__icon {
+    cursor: pointer;
 }
 
 .hero {
@@ -252,24 +322,6 @@ header > img {
         padding-top: 5rem;
     }
 }
-
-
-@media (min-width: 50rem) {
-
-    .navbar--desktop {
-        display: flex;
-        gap: 1.4rem;
-        align-items: center;
-    }
-    .navbar--desktop > li {
-        list-style: none;
-        display: inline-block;
-        font-size: var(--fs-200);
-        color: var(--dark-grayish-blue);
-    }
-}
-
-
 
 .hero__text > p {
     padding: 0.8em 2em;
@@ -568,6 +620,7 @@ form {
   gap: 0.3rem;
   width: 100%;
   padding: 1.8rem 0.5rem;
+  position: relative;
 }
 
 
@@ -586,6 +639,15 @@ input[type=email] {
     input[type=email] {
         padding: 0.8rem;
     } 
+}
+
+.footer__email__error {
+    display: none;
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    font-size: 0.8rem;
+    color: var(--bright-red);
 }
 
 .btn--footer {
@@ -630,38 +692,48 @@ input[type=email] {
     padding: 0.5rem 0;
 }
 
+.footer__nav__list > li:hover {
+    color: var(--bright-red);
+    cursor: pointer;
+}
+
 
 .footer__socials {
     flex-direction: column-reverse;
     width: 100%;
+    padding-bottom: 1.3rem;
 }
 @media (min-width: 50rem) {
     .footer__socials {
         flex-direction: column;
+        padding-bottom: 0;
+        padding-right: 2rem;
+        padding-top: 0.9rem;
     }
 }
 
 .footer__socials  > img {
     justify-self: center;
     padding-inline: 4rem;
-    padding: 0 2.5rem;
-    width: 70%;
+    padding: 1.5rem 4.5rem;
+    width: 90%;
     margin: 0 auto;
 
 }
 
 @media (min-width: 50rem) {
     .footer__socials  > img {
-        justify-self: center;
         padding: 1rem 0rem;
+        width: 100%;
+      
     }
 }
 
 .footer__socials__icons {
     margin: 0 auto;
     gap: 2rem;
-   padding: 2rem 1.5rem;
-    width: 60%;
+   padding: 2.5rem;
+    width: 95%;
     justify-content: space-between;
     justify-self: center;
     
@@ -678,7 +750,13 @@ input[type=email] {
 
 .footer__socials__icons > img {
  width: 50px;
+ cursor: pointer;
+ fill: white;
 }
+
+.footer__socials__icons > img:hover {
+    fill: var(--bright-red);
+   }
 
 @media (min-width: 50rem) {
     .footer__socials__icons > img {
@@ -699,3 +777,5 @@ input[type=email] {
             margin-top: -3rem;
         }
 }
+
+

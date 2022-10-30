@@ -1,4 +1,18 @@
 
+let isMobileNavOpen = false;
+let mobileNavIcon = document.querySelector(".navbar__mobile__icon");
+
+mobileNavIcon.addEventListener('click', openMobileNav);
+
+function openMobileNav() {
+    isMobileNavOpen = !isMobileNavOpen;
+
+    if(isMobileNavOpen) {
+        mobileNavIcon.src = "/images/icon-close.svg";
+    } else {
+        mobileNavIcon.src = "/images/icon-hamburger.svg";
+    }
+}
 
 let testimonal1 = document.getElementById("testimonails--1");
 let testimonal2 = document.getElementById("testimonails--2");
@@ -76,6 +90,39 @@ function getFourthTestimonial() {
     sliderButton1.classList.remove('selected');
     sliderButton2.classList.remove('selected');
     sliderButton3.classList.remove('selected');
+}
+
+let emailRegx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+let userEmail = document.getElementById("email");
+
+let emailErrorMessage = document.querySelector(".footer__email__error");
+
+let emailInputField = document.querySelector("#email");
+
+let submitUserEmail = document.getElementById("userSubmit");
+
+submitUserEmail.addEventListener('click', validateEmail)
+
+function validateEmail(event) {
+ event.preventDefault();
+
+ if(emailRegx.test(userEmail.value)) {
+    userEmail.value = '';
+    emailErrorMessage.style.display = "none";
+    emailInputField.style.border = "none";
+ } else {
+    emailErrorMessage.style.display = "block";
+    emailInputField.style.border = "1px solid var(--bright-red)";
+ }
+
+}
+
+emailInputField.addEventListener('focus', clearErrorMessage)
+
+function clearErrorMessage() {
+    emailErrorMessage.style.display = "none";
+    emailInputField.style.border = "none";
 }
 
 

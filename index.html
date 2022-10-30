@@ -10,16 +10,18 @@
 <body class="sans-serif">
  
 
-<header class="container header flex navbar container--desktop">
-  <img src="/images/logo.svg" alt="logo">
-  <img src="/images/icon-hamburger.svg" alt="mobile navigation" class="mobile">
-  <ul class="desktop flex navbar--desktop">
-    <li>Pricing</li>
-    <li>Product</li>
-    <li>About Us</li>
-    <li>Careers</li>
-    <li>Community</li>
-  </ul>
+<header class="container header navbar container--desktop">
+  <img src="/images/logo.svg" alt="logo" class="navbar__logo">
+  <img src="/images/icon-hamburger.svg" alt="mobile navigation" class="mobile navbar__mobile__icon">
+  <div class="">
+    <ul class="flex navbar__menu">
+      <li>Pricing</li>
+      <li>Product</li>
+      <li>About Us</li>
+      <li>Careers</li>
+      <li>Community</li>
+    </ul>
+  </div>
   <button class="btn desktop">Get Started</button>
 </header>
 
@@ -152,9 +154,10 @@
     <section class="footer__email">
       <form class="flex">
       <label for="email"></label>
-      <input type="email" name="email" placeholder="Updates in your box ...">
-      <input type="submit" value="Go" class="bg-bright-red btn btn--footer"> 
-      </form>
+      <input type="email" id="email" name="email" placeholder="Updates in your box ...">
+      <input type="submit" id="userSubmit" value="Go" class="bg-bright-red btn btn--footer"> 
+      <small class="footer__email__error">Please insert a valid email!</small>  
+    </form>
     </section>  
 
     <section class="footer__nav flex">
