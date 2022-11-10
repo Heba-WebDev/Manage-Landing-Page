@@ -35,7 +35,7 @@
 
   <section class="flex hero container container--desktop">
     <article class="grid text-center hero__text">
-      <h1 class="text-dark-blue fs-500">Bring everyone together to build better products.</h1>
+      <h1 class="text-dark-blue fs-700">Bring everyone together to build better products.</h1>
       <p class="text-grayish-blue fs-300">Manage makes it simple for software teams to plan day-to-day 
         tasks while keeping the larger team goals in view.</p>
         <button class="btn">Get Started</button>
@@ -47,7 +47,7 @@
 
   <section class="text-center benefits">
     <header class="benefits__intro container grid">
-      <h2>What’s different about Manage?</h2>
+      <h2 class="fs-500">What’s different about Manage?</h2>
       <p class="container text-grayish-blue fs-300">Manage provides all the functionality your team needs, without 
         the complexity. Our software is tailor-made for modern digital 
         product teams. </p>
@@ -167,7 +167,7 @@
 
     <section class="footer__nav flex">
       <ul class="footer__nav__list">
-      <li>Home</li>
+      <li class="list">Home</li>
       <li>Pricing</li>
       <li>Products</li>
       <li>About Us</li>
@@ -181,13 +181,35 @@
       </section> 
     
  <section class="footer__socials flex">
-  <img src="/images/logo.svg">
+  <svg class="footer_socials__logo">
+    <use href="/images/logo-footer.svg#logo"></use>
+  </svg>
+  <!-- <img src="/images/logo.svg"> -->
   <div class="flex footer__socials__icons">
-    <img src="/images/icon-facebook.svg" alt="facebook">
-    <img src="/images/icon-youtube.svg" alt="youtube">
-    <img src="/images/icon-twitter.svg" alt="twitter">
-    <img src="/images/icon-pinterest.svg" alt="pinterest">
-    <img src="/images/icon-instagram.svg" alt="instagram">
+    <svg class="footer__socials__icon">
+      <use xlink:href="/images/icon-facebook.svg#icon-facebook"></use>
+    </svg>
+    <!-- <img src="/images/icon-facebook.svg" alt="facebook"> -->
+
+    <svg class="icon footer__socials__icon">
+      <use xlink:href="/images/icon-youtube.svg#icon-youtube"></use>
+    </svg>
+    <!-- <img src="/images/icon-youtube.svg" alt="youtube"> -->
+    <svg class="icon footer__socials__icon">
+      <use xlink:href="/images/icon-twitter.svg#icon-twitter"></use>
+    </svg>
+    
+    <!-- <img src="/images/icon-twitter.svg" alt="twitter"> -->
+    <svg class="icon footer__socials__icon">
+      <use xlink:href="/images/icon-pintrest.svg#icon-pinterest"></use>
+    </svg>
+
+    <!-- <img src="/images/icon-pinterest.svg" alt="pinterest"> -->
+
+    <svg class="icon footer__socials__icon">
+      <use xlink:href="/images/icon-instagram.svg#icon-instagram"></use>
+    </svg>
+    <!-- <img src="/images/icon-instagram.svg" alt="instagram"> -->
   </div>
 
   

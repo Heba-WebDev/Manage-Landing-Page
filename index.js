@@ -26,12 +26,12 @@ let NavCloseIconSrc = "/images/icon-close.svg";
       mobileNavbar. style.display = "block"
       isNavMenuOpen = true;
       mobileNavIcon.src = NavCloseIconSrc;
-      document.body.style.overflow = "hidden";
+      //document.body.style.overflow = "hidden";
    } else {
       mobileNavbar. style.display = "none" 
       isNavMenuOpen = false;
       mobileNavIcon.src = navOpenIconSrc;
-      document.body.style.overflow = "";
+      //document.body.style.overflow = "";
    }
 };
 
