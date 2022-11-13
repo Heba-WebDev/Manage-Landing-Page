@@ -39,15 +39,7 @@ let NavCloseIconSrc = "/images/icon-close.svg";
 
 // mobileNavIcon.addEventListener('click', openMobileNavMenu);
 
-// function openMobileNavMenu() {
-   
 
-//     if(isMobileNavOpen) {
-//         mobileNavIcon.src = "/images/icon-close.svg";
-//     } else {
-//         mobileNavIcon.src = "/images/icon-hamburger.svg";
-//     }
-// }
 
 // let testimonal1 = document.getElementById("testimonails--1");
 // let testimonal2 = document.getElementById("testimonails--2");
@@ -161,3 +153,39 @@ function clearErrorMessage() {
 }
 
 
+let testimonailCards = document.querySelectorAll('.testimonials__card');
+let testimonialsBtns = document.querySelectorAll('.testimonials__slider__btn');
+
+let carouselSwapSpeed = 3000;
+let indexOfCurrentTestimonialCard = 0;
+let clearIntervalCarousel;
+
+// testimonailCards.forEach((card, i) => {
+//    testimonialsBtns.forEach(btn =>  btn.classList.remove("selected"));
+//    testimonialsBtns[indexOfCurrentTestimonialCard].classList.add("selected");
+
+//    testimonialsBtns.addEventListener('click', () => {
+//       index = i;
+//       startInterval() 
+//       showNextTestimonialCard() 
+//    })
+// })
+
+startInterval() 
+function startInterval() {
+   setInterval(() => {
+      
+      indexOfCurrentTestimonialCard++;
+      if(indexOfCurrentTestimonialCard === testimonailCards.length) indexOfCurrentTestimonialCard = 0;
+      showNextTestimonialCard();
+   }, carouselSwapSpeed);
+}
+
+showNextTestimonialCard() 
+
+function showNextTestimonialCard() {
+   testimonailCards.forEach(card =>  card.classList.remove("active"));
+   testimonailCards[indexOfCurrentTestimonialCard].classList.add("active");
+   testimonialsBtns.forEach(btn =>  btn.classList.remove("selected"));
+   testimonialsBtns[indexOfCurrentTestimonialCard].classList.add("selected");
+}
