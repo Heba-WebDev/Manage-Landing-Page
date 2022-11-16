@@ -9,15 +9,21 @@
 </head>
 <body class="sans-serif">
  
+<!--Headeer-->
 
-<header class="header container navbar container--desktop">
- 
+<header class="navbar container container--desktop">
+<!--logo-->
   <img src="/images/logo.svg" alt="logo" class="navbar__logo">
-  <button class="navbar__mobile" aria-controls="mobile-navigation">
+  <!--hamburger menu-->
+  <button class="navbar__mobile" aria-controls="mobile-navigation" aria-expanded="false">  
     <span class="sr-only">Menu</span>
     <img src="/images/icon-hamburger.svg" alt="" class="mobile navbar__mobile__icon" >
-  </button> 
+    <img src="/images/icon-close.svg" alt="" class="mobile navbar__mobile__icon hide" >
+  </button>
+
+<!--navbar-->
   <nav class="navbar__wrapper" id="mobile-navigation">
+    <!--navbar list-->
     <ul class="flex navbar__menu">
       <li><a href="#">Pricing</a></li>
       <li><a href="#">Product</a></li>
@@ -26,6 +32,7 @@
       <li><a href="#">Community</a></li>
     </ul>
   </nav>
+  <!--cta button-->
   <button class="btn desktop">Get Started</button>
 
 </header>

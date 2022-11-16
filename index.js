@@ -1,6 +1,9 @@
 
-// the state the shows if the mobile menu is showen or not
-let isNavMenuOpen = false;
+/*The mobile navbar*/
+let body = document.body
+
+// the header 
+let header = document.querySelector(".navbar");
 
 // the mobile menu button
 let mobileMenuBtn = document.querySelector(".navbar__mobile");
@@ -13,111 +16,34 @@ let NavCloseIconSrc = "/images/icon-close.svg";
 
 
 // the mobile menu list items
- let mobileNavbar = document.querySelector(".navbar__menu ")
+ let mobileNavbar = document.querySelector(".navbar__menu")
 
-
+let shadow = mobileNavbar.dataset.shadow;
+console.log(shadow)
 
 
  mobileMenuBtn.addEventListener("click", toggleMobileNavbar)
  
  function toggleMobileNavbar() {
 
-   if(!isNavMenuOpen) {
-      mobileNavbar. style.display = "block"
-      isNavMenuOpen = true;
-      mobileNavIcon.src = NavCloseIconSrc;
-      //document.body.style.overflow = "hidden";
-   } else {
-      mobileNavbar. style.display = "none" 
-      isNavMenuOpen = false;
+   if (mobileNavbar.hasAttribute('data-visible')) {
+      mobileMenuBtn.setAttribute("aria-expanded", true);
+      body.classList.remove('no-scroll');
       mobileNavIcon.src = navOpenIconSrc;
-      //document.body.style.overflow = "";
+      document.body.classList.toggle('overlay');
+     
+   } else {
+      mobileMenuBtn.setAttribute("aria-expanded", false);
+      body.classList.add('no-scroll');
+      mobileNavIcon.src =NavCloseIconSrc;
+      document.body.classList.toggle('overlay');
    }
+
+  mobileNavbar.toggleAttribute('data-visible');
+   
 };
 
-
-
-// mobileNavIcon.addEventListener('click', openMobileNavMenu);
-
-
-
-// let testimonal1 = document.getElementById("testimonails--1");
-// let testimonal2 = document.getElementById("testimonails--2");
-// let testimonal3 = document.getElementById("testimonails--3");
-// let testimonal4 = document.getElementById("testimonails--4");
-
-
-
-// let sliderButton1 = document.querySelector("#testimonailsbtn--1");
-// let sliderButton2 = document.querySelector("#testimonailsbtn--2");
-// let sliderButton3 = document.querySelector("#testimonailsbtn--3");
-// let sliderButton4 = document.querySelector("#testimonailsbtn--4");
-
-// sliderButton1.addEventListener('click', getFirstTestimonial)
-
-
-// function getFirstTestimonial() {
-//     testimonal1.style.display = 'grid'
-//     sliderButton1.classList.add('selected');
-
-//     testimonal2.style.display = 'none'
-//     testimonal3.style.display = 'none'
-//     testimonal4.style.display = 'none'
-//     sliderButton2.classList.remove('selected');
-//     sliderButton3.classList.remove('selected');
-//     sliderButton4.classList.remove('selected');
-// }
-
-
-
-// sliderButton2.addEventListener('click', getSecondTestimonial)
-
-
-// function getSecondTestimonial() {
-//     testimonal2.style.display = 'grid'
-//     sliderButton2.classList.add('selected');
-
-//     testimonal1.style.display = 'none'
-//     testimonal3.style.display = 'none'
-//     testimonal4.style.display = 'none'
-//     sliderButton1.classList.remove('selected');
-//     sliderButton3.classList.remove('selected');
-//     sliderButton4.classList.remove('selected');
-// }
-
-
-
-// sliderButton3.addEventListener('click', getThirdTestimonial)
-
-
-// function getThirdTestimonial() {
-//     testimonal3.style.display = 'grid'
-//     sliderButton3.classList.add('selected');
-
-//     testimonal1.style.display = 'none'
-//     testimonal2.style.display = 'none'
-//     testimonal4.style.display = 'none'
-//     sliderButton1.classList.remove('selected');
-//     sliderButton2.classList.remove('selected');
-//     sliderButton4.classList.remove('selected');
-// }
-
-
-
-// sliderButton4.addEventListener('click', getFourthTestimonial)
-
-
-// function getFourthTestimonial() {
-//     testimonal4.style.display = 'grid'
-//     sliderButton4.classList.add('selected');
-
-//     testimonal1.style.display = 'none'
-//     testimonal2.style.display = 'none'
-//     testimonal3.style.display = 'none'
-//     sliderButton1.classList.remove('selected');
-//     sliderButton2.classList.remove('selected');
-//     sliderButton3.classList.remove('selected');
-// }
+/*The email input submit validation */ 
 
 let emailRegx = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -153,27 +79,33 @@ function clearErrorMessage() {
 }
 
 
+/*The carousel*/
+
+//All the testimonials and carousel buttons corresponding to them
 let testimonailCards = document.querySelectorAll('.testimonials__card');
 let testimonialsBtns = document.querySelectorAll('.testimonials__slider__btn');
 
-let carouselSwapSpeed = 3000;
+//the speed of the carousel + the global var that has the current shown testimonial + a var to clear 
+// the interval if the user clicks on another button instead of the current one 
+let carouselSwapSpeed = 4000;
 let indexOfCurrentTestimonialCard = 0;
 let clearIntervalCarousel;
 
-// testimonailCards.forEach((card, i) => {
-//    testimonialsBtns.forEach(btn =>  btn.classList.remove("selected"));
-//    testimonialsBtns[indexOfCurrentTestimonialCard].classList.add("selected");
+//looping through the buttons of the carousel to add event listner + reset the global index that controls
+//which testimonial is shown + calls the startInterval and showNextTestimonialCard funtions 
+testimonialsBtns.forEach((btn, i) => {
+   btn.addEventListener('click', () => {
+      indexOfCurrentTestimonialCard = i;
+      startInterval();
+      showNextTestimonialCard();
+   })
+});
 
-//    testimonialsBtns.addEventListener('click', () => {
-//       index = i;
-//       startInterval() 
-//       showNextTestimonialCard() 
-//    })
-// })
-
+//starts an interval as soon as the page loads to show testimonals 
 startInterval() 
 function startInterval() {
-   setInterval(() => {
+   if(clearIntervalCarousel) clearInterval(clearIntervalCarousel);
+   clearIntervalCarousel =  setInterval(() => {
       
       indexOfCurrentTestimonialCard++;
       if(indexOfCurrentTestimonialCard === testimonailCards.length) indexOfCurrentTestimonialCard = 0;
@@ -181,11 +113,15 @@ function startInterval() {
    }, carouselSwapSpeed);
 }
 
+//this function removes and addes an active class to sliders and a selected class to buttons 
+//the active class show the testimonial and the selected class adds a color to the inner of the
+//current buttons corrsponding to the current testimonal 
 showNextTestimonialCard() 
-
 function showNextTestimonialCard() {
    testimonailCards.forEach(card =>  card.classList.remove("active"));
    testimonailCards[indexOfCurrentTestimonialCard].classList.add("active");
    testimonialsBtns.forEach(btn =>  btn.classList.remove("selected"));
    testimonialsBtns[indexOfCurrentTestimonialCard].classList.add("selected");
 }
+
+
