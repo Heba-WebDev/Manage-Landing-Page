@@ -277,8 +277,8 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 50rem) {
+    /*puts a shadow behind the navbar list in smaller screense*/
     .overlay {
-    
         position: absolute;
         inset: 0;
         z-index: 3;
@@ -288,10 +288,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 
 
-  
-/* .navbar__logo, .navbar__mobile__icon {
-    grid-row: 1/2;
-} */
 
 .navbar__wrapper {
         position: absolute;
@@ -302,32 +298,9 @@ p, h1, h2, h3, h4, h5, h6 {
 @media (min-width: 50rem) {
     .navbar__wrapper {
         position: relative;
-     
      }
 }
 
-
-@media (max-width: 50em) {
-    .primary-navigation {
-      display: none;
-  
-      position: absolute;
-      padding: var(--size-700);
-      inset: 7rem var(--size-400) auto;
-      max-width: 25rem;
-      margin-left: auto;
-      background: var(--clr-neutral-100);
-      border-radius: var(--size-100);
-      box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
-    }
-  
-    .primaryheader[data-overlay]::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      /* height: 100vh; */
-      background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
-    }}
 
   
 .navbar__menu {
@@ -347,10 +320,29 @@ p, h1, h2, h3, h4, h5, h6 {
         box-shadow: 0 0 0.75em rgb(0, 0, 0, 0.05);
     }
 
+    @media (min-width: 50rem) {
+
+        .navbar__menu {
+            display: block;
+            position: inherit;
+            display: flex;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            gap: 1.4rem;
+            align-items: center;
+            border: 0;
+            inset: 0;
+            background-color: none;
+            box-shadow: none;
+        }
+    }    
+
   .navbar__menu[data-visible] {
     display: block;
   }
-
+ 
+ /*show class for the hamburger/close icons */
   .show {
     display: block;
   }
@@ -372,27 +364,8 @@ p, h1, h2, h3, h4, h5, h6 {
         font-weight: bold;
     }
 
-        
-  
 
 @media (min-width: 50rem) {
-
-    .navbar__menu {
-        display: block;
-        position: inherit;
-        display: flex;
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        gap: 1.4rem;
-        align-items: center;
-        border: 0;
-        inset: 0;
-        background-color: none;
-        box-shadow: none;
-    }
-
-
    
     .navbar__menu > li {
         list-style: none;
@@ -499,7 +472,6 @@ p, h1, h2, h3, h4, h5, h6 {
     padding-top: 5rem;
     padding-inline: 2.5rem;
     gap: 0.3rem;
-    
     }
 }
 
@@ -624,7 +596,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-
 .testimonials__card.active {
     display: grid;
 }
@@ -680,7 +651,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 50rem)  {
     .promotion::before {
-   
         background-position: -15rem -5rem, 65rem -42rem;
     }
 }
@@ -694,7 +664,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 50rem) {
-    
     .promotion__inner {
         grid-template-columns: 1fr 1fr;
         justify-content: space-between;
@@ -849,10 +818,6 @@ input[type=email] {
 }
 
 
-
-
-
-
 .footer__socials {
     flex-direction: column-reverse;
     width: 100%;
@@ -906,7 +871,7 @@ input[type=email] {
         width: 100%;
         justify-content: space-between;
     }
-    }
+}
 
 
 .footer__socials__icons {
@@ -928,16 +893,6 @@ input[type=email] {
     }
 }
 
-/* .footer__socials__icons > img {
- width: 50px;
- cursor: pointer;
- fill: white;
-}
-
-.footer__socials__icons > img:hover {
-    fill: var(--bright-red);
-    cursor: pointer;
-   } */
 
 @media (min-width: 50rem) {
     .footer__socials__icons > img {
